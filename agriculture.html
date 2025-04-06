@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI+Agriculture Solutions - luisuantech Software</title>
+    <meta name="description" content="luisuantech Software provides intelligent AI solutions for the agriculture industry, including smart farming and smart slaughtering systems.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .solution-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/agriculture-hero.jpg') no-repeat center center/cover;
+            padding: 100px 0;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .solution-section {
+            padding: 60px 0;
+        }
+        
+        .solution-section:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+        
+        .solution-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        
+        .solution-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .solution-item:nth-child(even) .solution-image {
+            order: 2;
+        }
+        
+        .solution-image img {
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+        
+        .solution-content h3 {
+            margin-bottom: 20px;
+            color: #0066cc;
+        }
+        
+        .solution-features {
+            margin-top: 20px;
+        }
+        
+        .solution-features li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .solution-features li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: #0066cc;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .benefits-section {
+            background-color: #f5f5f5;
+            padding: 60px 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .benefit-item {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background-color: #f5f5f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .benefit-icon i {
+            font-size: 28px;
+            color: #0066cc;
+        }
+        
+        .benefit-item h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .case-studies {
+            padding: 60px 0;
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .case-item {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .case-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .case-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .case-content {
+            padding: 20px;
+        }
+        
+        .case-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .case-content p {
+            margin-bottom: 15px;
+        }
+        
+        .read-more {
+            color: #0066cc;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('images/cta-bg.jpg') no-repeat center center/cover;
+            color: #fff;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 992px) {
+            .solution-item {
+                grid-template-columns: 1fr;
+            }
+            
+            .solution-item:nth-child(even) .solution-image {
+                order: 1;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .case-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .benefits-grid,
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="luisuantech Software Logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="active">Solutions</a>
+                        <div class="dropdown-content">
+                            <a href="energy.html">AI+Energy</a>
+                            <a href="water.html">AI+Water Resources</a>
+                            <a href="transportation.html">AI+Transportation</a>
+                            <a href="agriculture.html" class="active">AI+Agriculture</a>
+                        </div>
+                    </li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Solution Hero Section -->
+    <section class="solution-hero">
+        <div class="container">
+            <h1>AI+Agriculture Solutions</h1>
+            <p>Intelligent solutions for modern agricultural practices</p>
+        </div>
+    </section>
+
+    <!-- Solution Content Section -->
+    <section class="solution-section" id="smart-farming">
+        <div class="container">
+            <h2>Our AI+Agriculture Solutions</h2>
+            <div class="solution-item">
+                <div class="solution-image">
+                    <img src="images/smart-farming.jpg" alt="Smart Farming">
+                </div>
+                <div class="solution-content">
+                    <h3>Smart Farming</h3>
+                    <p>Our Smart Farming solution combines IoT sensor networks, AI analytics, and automated control systems to revolutionize agricultural operations. By monitoring environmental conditions, crop health, and resource usage in real-time, we help farmers optimize productivity, reduce costs, and implement sustainable practices.</p>
+                    <ul class="solution-features">
+                        <li>Comprehensive IoT sensor systems for environmental monitoring</li>
+                        <li>AI-powered crop health monitoring and disease detection</li>
+                        <li>Precision irrigation and fertilization management</li>
+                        <li>Automated climate control for greenhouses and indoor farms</li>
+                        <li>Yield prediction and harvest optimization</li>
+                        <li>Integrated farm management platform with mobile access</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="solution-item">
+                <div class="solution-image">
+                    <img src="images/smart-slaughtering.jpg" alt="Smart Slaughtering">
+                </div>
+                <div class="solution-content">
+                    <h3>Smart Slaughtering</h3>
+                    <p>Our Smart Slaughtering solution brings AI-powered automation and quality control to meat processing facilities. Using computer vision, IoT sensors, and intelligent automation, we help slaughtering facilities improve efficiency, ensure food safety, and enhance product quality while meeting strict regulatory standards.</p>
+                    <ul class="solution-features">
+                        <li>AI-based visual inspection for quality assurance</li>
+                        <li>Automated process control and optimization</li>
+                        <li>Real-time monitoring of equipment and environmental conditions</li>
+                        <li>Comprehensive traceability and compliance management</li>
+                        <li>Predictive maintenance for processing equipment</li>
+                        <li>Energy and resource usage optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2>Key Benefits</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>Optimize resource usage, reduce waste, and minimize environmental impact through precision agriculture practices.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Productivity</h3>
+                    <p>Increase crop yields and operational efficiency through data-driven decision making and process optimization.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Quality & Safety</h3>
+                    <p>Ensure consistent product quality and food safety through automated monitoring and quality control.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Cost Reduction</h3>
+                    <p>Lower operational costs through resource optimization, preventive maintenance, and reduced waste.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="case-studies">
+        <div class="container">
+            <h2>Customer Success Stories</h2>
+            <div class="case-grid">
+                <div class="case-item">
+                    <div class="case-image">
+                        <img src="images/case-agriculture-1.jpg" alt="Case Study 1">
+                    </div>
+                    <div class="case-content">
+                        <h3>Large-Scale Greenhouse Operation</h3>
+                        <p>Implemented Smart Farming solution across 20 hectares of greenhouse facilities, achieving 40% reduction in water usage and 25% increase in crop yield.</p>
+                        <a href="#" class="read-more">Read Case Study</a>
+                    </div>
+                </div>
+                <div class="case-item">
+                    <div class="case-image">
+                        <img src="images/case-agriculture-2.jpg" alt="Case Study 2">
+                    </div>
+                    <div class="case-content">
+                        <h3>Modern Meat Processing Plant</h3>
+                        <p>Deployed Smart Slaughtering solution in a major processing facility, improving product quality consistency by 35% and reducing operational costs by 20%.</p>
+                        <a href="#" class="read-more">Read Case Study</a>
+                    </div>
+                </div>
+                <div class="case-item">
+                    <div class="case-image">
+                        <img src="images/case-agriculture-3.jpg" alt="Case Study 3">
+                    </div>
+                    <div class="case-content">
+                        <h3>Sustainable Farming Cooperative</h3>
+                        <p>Implemented IoT-based Smart Farming systems for 50 cooperative members, reducing fertilizer usage by 30% while maintaining or improving crop yields.</p>
+                        <a href="#" class="read-more">Read Case Study</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Agricultural Operations?</h2>
+                <p>Contact us today to discuss how our AI+Agriculture solutions can help optimize your operations, improve product quality, and increase sustainability.</p>
+                <a href="contact.html" class="btn">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="images/logo-white.png" alt="luisuantech Software Logo">
+                    <p>AI Empowerment, Creating a Better Tomorrow Together</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-link-group">
+                        <h3>Solutions</h3>
+                        <ul>
+                            <li><a href="energy.html">AI+Energy</a></li>
+                            <li><a href="water.html">AI+Water Resources</a></li>
+                            <li><a href="transportation.html">AI+Transportation</a></li>
+                            <li><a href="agriculture.html">AI+Agriculture</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-link-group">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="news.html">News</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h3>Contact Us</h3>
+                        <p><i class="fas fa-phone"></i> Service Hotline: 86+13426086861</p>
+                        <p><i class="fas fa-envelope"></i> Email: 13426086861@139.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Headquarters: Guangzhou, China</p>
+                        <div class="social-media">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 luisuantech Software. All Rights Reserved.</p>
+                <p>******</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

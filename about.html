@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - luisuantech Software</title>
+    <meta name="description" content="luisuantech Software Technology Co., Ltd. was founded in 1997 and has developed into a provider of artificial intelligence solutions.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/about-hero.jpg') no-repeat center center/cover;
+            padding: 100px 0;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .about-content {
+            padding: 60px 0;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-image img {
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-text h2 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        
+        .about-text h2:after {
+            margin: 15px 0 0;
+        }
+        
+        .core-values {
+            background-color: #f5f5f5;
+            padding: 60px 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .value-item {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #0066cc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: #fff;
+            font-size: 32px;
+        }
+        
+        .achievements {
+            padding: 60px 0;
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .achievement-item {
+            text-align: center;
+        }
+        
+        .achievement-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 992px) {
+            .about-grid,
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .achievements-grid {
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="luisuantech Software Logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#">Solutions</a>
+                        <div class="dropdown-content">
+                            <a href="energy.html">AI+Energy</a>
+                            <a href="water.html">AI+Water Resources</a>
+                            <a href="transportation.html">AI+Transportation</a>
+                            <a href="agriculture.html">AI+Agriculture</a>
+                        </div>
+                    </li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About luisuantech Software</h1>
+            <p>AI Empowerment, Creating a Better Tomorrow Together</p>
+        </div>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="about-content">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="images/about-company.jpg" alt="luisuantech Software Headquarters">
+                </div>
+                <div class="about-text">
+                    <h2>Company Profile</h2>
+                    <p>Company always takes it as its own responsibility to create high-precision products that serve the national strategy and meet the market demand. In order to control the development trend of information technology, it has established the Information Technology Innovation Research Institute (For Information Innovation, Fiberhome (ForInN) Research Institute), and established a "Data Governance and Access Optimization" joint laboratory with Beijing Information Science and Technology University.</p>
+                    <p>luisuantech Software is one of the earliest AI+ companies engaged in on-site intelligent software and hardware research and development and services in China. After more than 20 years of development, it has become a supplier of on-site intelligent operation products and overall solutions.</p>
+                    <p>Adhering to the concept of "AI Empowerment, Creating a Better Tomorrow Together", luisuantech Software has developed into an artificial intelligence solution provider for scenarios such as AI+Energy, AI+Transportation, AI+Water Resources, and AI+Agriculture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="core-values">
+        <div class="container">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We continuously explore new technologies and solutions to solve complex industry challenges and create greater value for our customers.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Integrity</h3>
+                    <p>We operate with the highest standards of honesty, ethics, and reliability in all our business relationships and transactions.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Collaboration</h3>
+                    <p>We believe in the power of teamwork and partnerships to achieve shared goals and deliver superior results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements">
+        <div class="container">
+            <h2>Our Achievements</h2>
+            <div class="achievements-grid">
+                <div class="achievement-item">
+                    <div class="achievement-number">5</div>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-number">500+</div>
+                    <p>Completed Projects</p>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-number">50+</div>
+                    <p>Corporate Clients</p>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-number">50+</div>
+                    <p>Industry Awards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="images/logo-white.png" alt="luisuantech Software Logo">
+                    <p>AI Empowerment, Creating a Better Tomorrow Together</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-link-group">
+                        <h3>Solutions</h3>
+                        <ul>
+                            <li><a href="energy.html">AI+Energy</a></li>
+                            <li><a href="water.html">AI+Water Resources</a></li>
+                            <li><a href="transportation.html">AI+Transportation</a></li>
+                            <li><a href="agriculture.html">AI+Agriculture</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-link-group">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="news.html">News</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h3>Contact Us</h3>
+                        <p><i class="fas fa-phone"></i> Service Hotline: 86+13426086861</p>
+                        <p><i class="fas fa-envelope"></i> Email: 13426086861@139.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Headquarters: Guangzhou, China</p>
+                        <div class="social-media">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 luisuantech Software. All Rights Reserved.</p>
+                <p>******</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

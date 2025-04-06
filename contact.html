@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - luisuantech Software</title>
+    <meta name="description" content="Contact luisuantech Software for AI solutions in energy, water resources, transportation, and agriculture. Our headquarters is located in Guangzhou, China.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .contact-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/contact-hero.jpg') no-repeat center center/cover;
+            padding: 100px 0;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .contact-section {
+            padding: 60px 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .contact-info h3 {
+            color: #0066cc;
+            margin-bottom: 20px;
+        }
+        
+        .contact-method {
+            margin-bottom: 30px;
+        }
+        
+        .contact-method h4 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .contact-method h4 i {
+            color: #0066cc;
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .contact-form h3 {
+            color: #0066cc;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #0066cc;
+            box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+        }
+        
+        .map-section {
+            padding: 0 0 60px;
+        }
+        
+        .map-container {
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .offices-section {
+            padding: 60px 0;
+            background-color: #f5f5f5;
+        }
+        
+        .offices-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .office-item {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .office-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .office-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #0066cc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: #fff;
+            font-size: 24px;
+        }
+        
+        .office-item h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .offices-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .offices-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="luisuantech Software Logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#">Solutions</a>
+                        <div class="dropdown-content">
+                            <a href="energy.html">AI+Energy</a>
+                            <a href="water.html">AI+Water Resources</a>
+                            <a href="transportation.html">AI+Transportation</a>
+                            <a href="agriculture.html">AI+Agriculture</a>
+                        </div>
+                    </li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We're here to answer your questions and help you find the right solutions</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-method">
+                        <h4><i class="fas fa-phone"></i> Phone</h4>
+                        <p>Service Hotline: 400-998-9418</p>
+                        <p>International: +86 400-998-9418</p>
+                    </div>
+                    <div class="contact-method">
+                        <h4><i class="fas fa-envelope"></i> Email</h4>
+                        <p>General Inquiries: 13426086861@139.com</p>
+                        <p>Support: 229060128@qq.com</p>
+                        <p>Sales: 13426086861@139.com</p>
+                    </div>
+                    <div class="contact-method">
+                        <h4><i class="fas fa-map-marker-alt"></i> Headquarters</h4>
+                        <p>luisuantech Software Technology Co., Ltd.</p>
+                        <p>Science and Technology Innovation Building</p>
+                        <p>Tianhe District, Guangzhou, China</p>
+                    </div>
+                    <div class="contact-method">
+                        <h4><i class="fas fa-clock"></i> Business Hours</h4>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                        <p>Saturday & Sunday: Closed</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-container">
+                <!-- This is a placeholder for the map. In a real implementation, you would use Google Maps or another mapping service -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.5245898541716!2d113.3211253!3d23.1300308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDA3JzQ4LjEiTiAxMTPCsDE5JzE2LjEiRQ!5e0!3m2!1sen!2sus!4v1617614565699!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offices Section -->
+    <section class="offices-section">
+        <div class="container">
+            <h2>Our Offices</h2>
+            <div class="offices-grid">
+                <div class="office-item">
+                    <div class="office-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Guangzhou</h3>
+                    <p>Science and Technology Innovation Building</p>
+                    <p>Tianhe District, Guangzhou</p>
+                    <p>Phone: +86 400-998-9418</p>
+                    <div class="location-image">
+                        <img src="images/guangzhou-office.jpg" alt="Guangzhou Office">
+                    </div>
+                </div>
+                <div class="office-item">
+                    <div class="office-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Shenzhen</h3>
+                    <p>Software Industry Base</p>
+                    <p>Nanshan District, Shenzhen</p>
+                    <p>Phone: +86 400-998-9418</p>
+                    <div class="location-image">
+                        <img src="images/shenzhen-office.jpg" alt="Shenzhen Office">
+                    </div>
+                </div>
+                <div class="office-item">
+                    <div class="office-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Beijing</h3>
+                    <p>Technology Center Tower</p>
+                    <p>Haidian District, Beijing</p>
+                    <p>Phone: +86 400-998-9418</p>
+                    <div class="location-image">
+                        <img src="images/beijing-office.jpg" alt="Beijing Office">
+                    </div>
+                </div>
+                <div class="office-item">
+                    <div class="office-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Xi'an</h3>
+                    <p>Innovation Park</p>
+                    <p>High-tech Zone, Xi'an</p>
+                    <p>Phone: +86 400-998-9418</p>
+                    <div class="location-image">
+                        <img src="images/xian-office.jpg" alt="Xi'an Office">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="images/logo-white.png" alt="luisuantech Software Logo">
+                    <p>AI Empowerment, Creating a Better Tomorrow Together</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-link-group">
+                        <h3>Solutions</h3>
+                        <ul>
+                            <li><a href="energy.html">AI+Energy</a></li>
+                            <li><a href="water.html">AI+Water Resources</a></li>
+                            <li><a href="transportation.html">AI+Transportation</a></li>
+                            <li><a href="agriculture.html">AI+Agriculture</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-link-group">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="news.html">News</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h3>Contact Us</h3>
+                        <p><i class="fas fa-phone"></i> Service Hotline: 13426086861</p>
+                        <p><i class="fas fa-envelope"></i> Email: 13426086861@139.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Headquarters: Guangzhou, China</p>
+                        <div class="social-media">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 luisuantech Software. All Rights Reserved.</p>
+                <p>******</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Simple form validation and submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // In a real implementation, you would send this data to a server
+            // For demo purposes, we'll just show a success message
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

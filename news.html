@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - luisuantech Software</title>
+    <meta name="description" content="Stay updated with the latest news, events, and announcements from luisuantech Software.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .news-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/news-hero.jpg') no-repeat center center/cover;
+            padding: 100px 0;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .news-section {
+            padding: 60px 0;
+        }
+        
+        .news-filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #0066cc;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active {
+            color: #0066cc;
+        }
+        
+        .filter-btn.active:after,
+        .filter-btn:hover:after {
+            width: 80%;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .news-item {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .news-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .news-image img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .news-content {
+            padding: 25px;
+        }
+        
+        .news-category {
+            display: inline-block;
+            background-color: #f5f5f5;
+            color: #0066cc;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .news-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        .news-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .news-date i {
+            margin-right: 6px;
+            color: #0066cc;
+        }
+        
+        .news-excerpt {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .pagination-item {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .pagination-item:hover,
+        .pagination-item.active {
+            background-color: #0066cc;
+            color: #fff;
+        }
+        
+        .full-article {
+            padding: 60px 0;
+        }
+        
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        .article-content {
+            padding: 40px;
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .article-category {
+            margin-right: 20px;
+        }
+        
+        .article-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .article-text {
+            line-height: 1.8;
+        }
+        
+        .article-text p {
+            margin-bottom: 20px;
+        }
+        
+        .article-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .related-section {
+            background-color: #f5f5f5;
+            padding: 60px 0;
+        }
+        
+        @media (max-width: 992px) {
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-btn {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="luisuantech Software Logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#">Solutions</a>
+                        <div class="dropdown-content">
+                            <a href="energy.html">AI+Energy</a>
+                            <a href="water.html">AI+Water Resources</a>
+                            <a href="transportation.html">AI+Transportation</a>
+                            <a href="agriculture.html">AI+Agriculture</a>
+                        </div>
+                    </li>
+                    <li><a href="news.html" class="active">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- News Hero Section -->
+    <section class="news-hero">
+        <div class="container">
+            <h1>Latest News & Updates</h1>
+            <p>Stay informed about our latest achievements, events, and announcements</p>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="container">
+            <div class="news-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="company">Company News</button>
+                <button class="filter-btn" data-filter="technology">Technology</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="awards">Awards</button>
+            </div>
+            
+            <div class="news-grid">
+                <!-- News Item 1 -->
+                <div class="news-item" id="news1">
+                    <div class="news-image">
+                        <img src="images/news-1.jpg" alt="Company News 1">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-category">Company News</span>
+                        <h3 class="news-title">luisuantech Software Partners with Leading Universities to Establish Joint AI Research Lab</h3>
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i> April 2, 2025
+                        </div>
+                        <p class="news-excerpt">luisuantech Software announced a strategic partnership with three leading universities to establish a joint AI research laboratory, focusing on developing cutting-edge AI solutions for industrial applications. The collaboration aims to bridge the gap between academic research and practical implementation.</p>
+                        <a href="news-article1.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- News Item 2 -->
+                <div class="news-item" id="news2">
+                    <div class="news-image">
+                        <img src="images/news-2.jpg" alt="Technology News">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-category">Technology</span>
+                        <h3 class="news-title">New Green Computing Initiative Reduces Carbon Footprint of AI Models by 40%</h3>
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i> March 15, 2025
+                        </div>
+                        <p class="news-excerpt">luisuantech Software has successfully implemented a groundbreaking green computing initiative that reduces the carbon footprint of AI model training by up to 40%. This achievement marks a significant milestone in sustainable AI development and demonstrates our commitment to environmental responsibility.</p>
+                        <a href="news-article2.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- News Item 3 -->
+                <div class="news-item" id="news3">
+                    <div class="news-image">
+                        <img src="images/news-3.jpg" alt="Awards News">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-category">Awards</span>
+                        <h3 class="news-title">luisuantech Software's Smart Water Management System Wins National Innovation Award</h3>
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i> February 28, 2025
+                        </div>
+                        <p class="news-excerpt">Our AI-powered Smart Water Management System has received the prestigious National Technology Innovation Award. The system, which combines IoT sensors, real-time monitoring, and predictive analytics, has been recognized for its significant contribution to water resource efficiency and conservation efforts.</p>
+                        <a href="news-article3.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- News Item 4 -->
+                <div class="news-item">
+                    <div class="news-image">
+                        <img src="images/news-4.jpg" alt="Events News">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-category">Events</span>
+                        <h3 class="news-title">luisuantech Software to Host Annual Green Tech Summit Focusing on Sustainable AI Solutions</h3>
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i> February 10, 2025
+                        </div>
+                        <p class="news-excerpt">We are excited to announce the upcoming Green Tech Summit, where industry leaders, researchers, and policymakers will gather to discuss the latest advancements in sustainable AI technologies. The event will feature keynote speeches, panel discussions, and hands-on workshops on reducing the environmental impact of AI systems.</p>
+                        <a href="news-article4.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- News Item 5 -->
+                <div class="news-item">
+                    <div class="news-image">
+                        <img src="images/news-5.jpg" alt="Technology News">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-category">Technology</span>
+                        <h3 class="news-title">luisuantech Software Launches New Low-Energy AI Platform for Edge Computing</h3>
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i> January 25, 2025
+                        </div>
+                        <p class="news-excerpt">We are proud to introduce our new low-energy AI platform designed specifically for edge computing applications. This innovative solution enables powerful AI capabilities on resource-constrained devices while minimizing energy consumption, making it ideal for IoT deployments in remote and environmentally sensitive areas.</p>
+                        <a href="news-article5.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- News Item 6 -->
+                <div class="news-item">
+                    <div class="news-image">
+                        <img src="images/news-6.jpg" alt="Company News">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-category">Company News</span>
+                        <h3 class="news-title">luisuantech Software Expands Global Presence with New Office in Singapore</h3>
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i> January 15, 2025
+                        </div>
+                        <p class="news-excerpt">As part of our international growth strategy, we are delighted to announce the opening of our new office in Singapore. This expansion will strengthen our presence in the Asia-Pacific region and enable us to better serve our growing customer base in Southeast Asia with localized support and solutions.</p>
+                        <a href="news-article6.html" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <a href="#" class="pagination-item active">1</a>
+                <a href="#" class="pagination-item">2</a>
+                <a href="#" class="pagination-item">3</a>
+                <a href="#" class="pagination-item">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="images/logo-white.png" alt="luisuantech Software Logo">
+                    <p>AI Empowerment, Creating a Better Tomorrow Together</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-link-group">
+                        <h3>Solutions</h3>
+                        <ul>
+                            <li><a href="energy.html">AI+Energy</a></li>
+                            <li><a href="water.html">AI+Water Resources</a></li>
+                            <li><a href="transportation.html">AI+Transportation</a></li>
+                            <li><a href="agriculture.html">AI+Agriculture</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-link-group">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="news.html">News</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h3>Contact Us</h3>
+                        <p><i class="fas fa-phone"></i> Service Hotline: 86+13426086861</p>
+                        <p><i class="fas fa-envelope"></i> Email: 13426086861@139.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Headquarters: Guangzhou, China</p>
+                        <div class="social-media">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 luisuantech Software. All Rights Reserved.</p>
+                <p>******</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // News filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const newsItems = document.querySelectorAll('.news-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get filter value
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Filter news items
+                    newsItems.forEach(item => {
+                        if (filterValue === 'all') {
+                            item.style.display = 'block';
+                        } else {
+                            const category = item.querySelector('.news-category').textContent.toLowerCase();
+                            if (category.includes(filterValue)) {
+                                item.style.display = 'block';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
