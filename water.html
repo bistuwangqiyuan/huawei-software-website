@@ -159,6 +159,53 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+        /* Footer Navigation Styles */
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+        }
+        
+        .footer-nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-nav ul li {
+            padding: 0 10px;
+            border-right: 1px solid #666;
+        }
+        
+        .footer-nav ul li:last-child {
+            border-right: none;
+        }
+        
+        .footer-nav ul li a {
+            color: #ccc;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-nav ul li a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-nav ul li {
+                padding: 5px 0;
+                border-right: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -366,8 +413,13 @@
                 </div>
             </div>
             <div class="footer-bottom">
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
                 <p>&copy; 2024 luisuantech Software. All Rights Reserved.</p>
-                <p>******</p>
             </div>
         </div>
     </footer>
